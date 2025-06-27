@@ -1,11 +1,12 @@
+import { Metadata } from "next";
 import PostDetailClient from "./PostDetailClient";
-import type { Metadata } from "next";
 
-interface PostPageProps {
+type Props = {
   params: { id: string };
-}
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
 
-export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Optionally fetch post for SEO, or just use the ID
   return {
     title: `Post ${params.id} | Blog Viewer`,
@@ -13,6 +14,6 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   };
 }
 
-export default function PostDetailPage({ params }: PostPageProps) {
+export default function PostDetailPage({ params }: Props) {
   return <PostDetailClient id={params.id} />;
 } 
