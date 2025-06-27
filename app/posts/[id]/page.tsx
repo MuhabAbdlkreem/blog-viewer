@@ -1,19 +1,14 @@
 import { Metadata } from "next";
 import PostDetailClient from "./PostDetailClient";
 
-type Props = {
-  params: { id: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
-};
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  // Optionally fetch post for SEO, or just use the ID
+// Use inline typing for params as required by Next.js App Router
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   return {
     title: `Post ${params.id} | Blog Viewer`,
     description: `Details for post ${params.id}`,
   };
 }
 
-export default function PostDetailPage({ params }: Props) {
+export default function PostDetailPage({ params }: { params: { id: string } }) {
   return <PostDetailClient id={params.id} />;
-} 
+}
