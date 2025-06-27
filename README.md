@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -52,3 +53,7 @@ To deploy this project:
 3. Follow the prompts to deploy. Vercel will handle the rest!
 
 After deployment, update the `metadataBase` in `app/layout.tsx` with your live URL for best SEO results.
+=======
+# blog-viewer
+Blog viewer app using Next.js App Router, TypeScript &amp; TailwindCSS. Features dynamic routes, loading states &amp; clean UI.
+>>>>>>> f0e8a3e49fbc868aa99ef8b66b147d7a13f6f291
